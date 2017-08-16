@@ -33,8 +33,8 @@ layout: default
                             <!-- Post Listing -->
                             {% for post in site.posts %}
 
-                            {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
-                            {% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
+                            {% capture this_month %}{{ post.next.date | date: "%B" }}{% endcapture %}
+                            {% capture next_month %}{{ post.date | date: "%B" }}{% endcapture %}
 
                             <div class="row topic-row">
                                 <div class="3u not-small">
