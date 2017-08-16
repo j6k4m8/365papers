@@ -4,14 +4,28 @@ layout: default
 
 {% include minihead.html %}
 
-<article class="post">
-    <h1>{{ page.title }}</h1>
 
-    <div class="entry">
-        {{ content }}
+<div class="row page-row">
+    <div class="8u -2u 10u(small) -1u(small)">
+        <div class="row">
+            <div class="12u">
+                <div class="row">
+                    <div class="12u">
+                        <h1 class="page-title">{{ page.title }}</h1>
+                        <span class="page-subtitle">{{ page.date | date_to_long_string }}</span>
+                        <p>
+                            <a href="https://doi.org/{{ page.doi }}">{{ page.doi }}</a>
+                        </p>
+                        <div class="intro-text">
+                            <div class="row">
+                                <div class="12u(small)">
+                                    {{ content }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="date">
-        Written on {{ page.date | date: "%B %e, %Y" }}
-    </div>
-</article>
+</div>
