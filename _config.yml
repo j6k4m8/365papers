@@ -1,40 +1,80 @@
-# Name of your blog (this will show up at the top of your page and in the RSS feed)
-name: 365Papers
+#
+# This file contains configuration flags to customize your site
+#
 
-# Short description (goes below the title; it will also be used in the RSS feed)
-description: A paper per day has no effect on doctor proximity (p < 0.05).
+# Name of your site (displayed in the header)
+name: 365 Papers
 
-# Your name, as you want it to appear underneath each post and in the footer
-author: Jordan Matelsky
+# Short bio or description (displayed in the header)
+description: 365 Papers — Jordan Matelsky
 
-# Your email if you want it to be linked on the contact page
-author_email: jordan@matelsky.com
+# URL of your avatar or profile pic (you could use your GitHub profile pic)
+avatar: https://avatars0.githubusercontent.com/u/693511?v=3&s=460
 
-# The directory for category index pages. Change it to something else if
-# for example you want links like /categories/category1 instead of /category1
-category_dir: /
+#
+# Flags below are optional
+#
 
-# Uncomment if you are planning to run the blog in a subdirectory
-# Note - if you enable this, and attempt to view your site locally you have to use the baseurl in your local path.
-# Example, you must use http://localhost:4000/path/to/blog
-#baseurl: /path/to/blog
-baseurl:
+# Includes an icon in the footer for each username you enter
+footer-links:
+  dribbble:
+  email: jordan@matelsky.com
+  facebook:
+  flickr:
+  github: j6k4m8
+  instagram:
+  linkedin: j6k4m8
+  pinterest:
+  rss: yes
+  twitter: j6m8
+  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus: # anything in your profile username that comes after plus.google.com/
 
-# The URL of your actual domain. This will be used to make absolute links in the RSS feed.
+
+# Enter your Disqus shortname (not your username) to enable commenting on posts
+# You can find your shortname on the Settings page of your Disqus account
+#disqus: j6m8
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics: UA-44566813-1
+
+# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
+# Used for Sitemap.xml and your RSS feed
 url: http://blog.jordan.matelsky.com/365papers
 
-#### Under the Hood Stuff #####
+# If you're hosting your site at a Project repository on GitHub pages
+# (http://yourusername.github.io/repository-name)
+# and NOT your User repository (http://yourusername.github.io)
+# then add in the baseurl here, like this: "/repository-name"
+/365papers
 
-# Use rdiscount as the markdown engine because it generates html5 compliant code for stuff like footnotes
-# If you use maroku (default engine) some of your generated pages may not validate or lint as html5
-# If you don't have it install it via gem install rdiscount
-markdown: rdiscount
+#
+# !! You don't need to change any of the configuration flags below !!
+#
 
-# Makes pretty (descriptive) permalinks. See Jekyll docs for alternatives.
-permalink: pretty
+permalink: /:title/
 
-# How many articles do you wish to appear on the front page:
-paginate: 3
+# The release of Jekyll Now that you're using
+version: v1.1.0
 
-# Exclude metadata and development time dependencies (like Grunt plugins)
-exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
+# Set the Sass partials directory, as we're using @imports
+sass:
+  style: :expanded # You might prefer to minify using :compressed
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Use the following plug-ins
+gems:
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+
+# Exclude these files from your production _site
+exclude:
+    - Gemfile
+    - Gemfile.lock
+    - LICENSE
+    - README.md
+    - CNAME
