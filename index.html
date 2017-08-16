@@ -32,7 +32,12 @@ layout: default
                         <div class="12u">
                             <!-- Post Listing -->
                             {% for post in site.posts %}
+
+                            {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
+                            {% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
+
                             <div class="row topic-row">
+                                {% if this_month != next_month %}
                                 <div class="3u not-small">
                                     <div class="light-border-top">
                                         <span class="type-brandon left-header">
@@ -40,16 +45,19 @@ layout: default
                                         </span>
                                     </div>
                                 </div>
+                                {% endif %}
                                 <div class="9u 12u(small)">
                                     <div class="light-border-top">
                                         <div class="right-content">
+                                            {% if this_month != next_month %}
                                             <div class="12u type-brandon only-small small-header year-header">
                                                 {{ post.date | date: "%B" }}
                                             </div>
+                                            {% endif %}
                                             <div class="right-paragraph 12u">
                                                 <h2>
                                                     <a href="{{ site.baseurl }}{{ post.url }}">
-                                                        {{ post.date | date_to_long_string }} &mdash; {{ post.title }}
+                                                        {{ post.date | date: "%d" }} &mdash; {{ post.title }}
                                                     </a>
                                                 </h2>
                                                 <p>{{ post.excerpt }}</p>
