@@ -8,49 +8,58 @@ layout: default
     <div class="8u -2u 10u(small) -1u(small)">
         <div class="row">
             <div class="12u">
-                <h1 class="page-title">365<span style="font-weight: normal;">Papers</span></h1>
-                <div class="intro-text">
-                    <div class="row">
-                        <div class="12u(small)">
-                            <p>
-                                Starting August 16, 2017, I've decided to read one academic paper
-                                every day for 365 days. The topics are intended to span
-                                <b>Machine Learning</b>, <b>Neuroscience</b>, <b>Computer Vision</b>,
-                                and <b>Computational Medicine</b>, with other topics thrown in for
-                                seasoning.
-                            </p>
-                            <p>
-                                Points of focus:
-                                <ul>
-                                    <li>fair representation of minorities, women in science</li>
-                                    <li>recent papers, or "classics"</li>
-                                    <li>document here, and in Mendeley</li>
-                                </ul>
-                            </p>
+                <div class="row">
+                    <div class="12u">
+                        <h1 class="page-title">365<span style="font-weight: normal;">Papers</span>
+                        </h1>
+                        <div class="intro-text">
+                            <div class="row">
+                                <div class="12u(small)">
+                                    <p>
+                                        Starting August 16, 2017, I've decided to read one academic paper
+                                        every day for 365 days. The topics are intended to span <b>Machine Learning</b>,
+                                        <b>Neuroscience</b>, <b>Computer Vision</b>, and
+                                        <b>Computational Medicine</b>, with other topics thrown in for
+                                        seasoning.
+                                    </p>
+                                    <p>
+                                        Points of focus:
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="12u">
+                            <!-- Post Listing -->
+                            {% for post in site.posts %}
+                            <div class="row topic-row">
+                                <div class="3u not-small">
+                                    <div class="light-border-top">
+                                        <span class="type-brandon left-header">Test</span>
+                                    </div>
+                                </div>
+                                <div class="9u 12u(small)">
+                                    <div class="light-border-top">
+                                        <div class="right-content">
+                                            <div class="12u type-brandon only-small small-header year-header">Test</div>
+                                            <div class="right-paragraph 12u">
+                                                <h2>
+                                                    <a href="http://jordan.matelsky.com/ugrad/eyes/eyes.html">{{ post.title }}</a>
+                                                </h2>
+                                                <p>{{ post.excerpt }}</p>
+                                                <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+                                                <div class="sep"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <!-- End Post Listing -->
                         </div>
                     </div>
                 </div>
-                <div class="12u" id="readout"></div>
             </div>
-        </div>
-    </div>
-</div>
-<div class="row page-row">
-    <div class="row" id="posts">
-        <div class="12u">
-            {% for post in site.posts %}
-            <div class="row">
-                <div class="8u -2u 10u(small) -1u(small)">
-                  <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-                  <div class="entry">
-                    {{ post.excerpt }}
-                  </div>
-
-                  <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-                </div>
-            </div>
-            {% endfor %}
         </div>
     </div>
 </div>
