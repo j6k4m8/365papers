@@ -37,15 +37,15 @@ layout: default
                             {% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
 
                             <div class="row topic-row">
-                                {% if this_month != next_month %}
                                 <div class="3u not-small">
+                                    {% if this_month != next_month %}
                                     <div class="light-border-top">
                                         <span class="type-brandon left-header">
                                             {{ post.date | date: "%B" }}
                                         </span>
                                     </div>
+                                    {% endif %}
                                 </div>
-                                {% endif %}
                                 <div class="9u 12u(small)">
                                     <div class="light-border-top">
                                         <div class="right-content">
@@ -61,7 +61,9 @@ layout: default
                                                     </a>
                                                 </h2>
                                                 <p>{{ post.excerpt }}</p>
+                                                {% if this_month != next_month %}
                                                 <div class="sep"></div>
+                                                {% endif %}
                                             </div>
                                         </div>
                                     </div>
