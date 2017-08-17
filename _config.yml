@@ -66,6 +66,7 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  math_engine: mathjax
 
 # Use the following plug-ins
 gems:
