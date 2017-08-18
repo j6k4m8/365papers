@@ -11,4 +11,7 @@ dest_file = "{}-{}.md".format(date_str, post_num)
 
 file_to_move = sorted(os.listdir("./_drafts"))[0]
 
-os.rename(file_to_move, dest_file)
+os.rename(
+    "./_drafts/{}".format(file_to_move),
+    "./_posts/{}".format(dest_file)
+)
