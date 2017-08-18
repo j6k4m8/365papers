@@ -13,7 +13,12 @@ layout: default
                     <div class="12u">
                         <h1 class="page-title">{{ page.slug }} &mdash; {{ page.title }}</h1>
                         <p>
+                            {% if page.doi %}
                             <a href="https://doi.org/{{ page.doi }}">{{ page.byline }} ({{ page.doi }})</a>
+                            {% endif %}
+                            {% if page.arxiv %}
+                            <a href="https://arxiv.org/abs/{{ page.arxiv }}">{{ page.byline }} ({{ page.arxiv }})</a>
+                            {% endif %}
                         </p>
                         <small>Read on {{ page.date | date_to_long_string }}</small>
                         <div class="intro-text">
