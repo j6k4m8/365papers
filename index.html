@@ -73,7 +73,7 @@ layout: default
                                                         {{ post.date | date: "%d" }} &mdash; {{ post.title }}
                                                     </a>
                                                 </h2>
-                                                <p>{{ post.byline }} <a href="{{ site.baseurl }}{{ post.url }}">...</a></p>
+                                                <p>{{ post.summary }} <a href="{{ site.baseurl }}{{ post.url }}">[ Read More ]</a></p>
                                                 {% if this_month != next_month %}
                                                 <div class="sep"></div>
                                                 {% endif %}
