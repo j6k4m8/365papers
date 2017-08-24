@@ -15,7 +15,8 @@ def main():
 
     TODO: Integrate with `t` (npm i -G t) to auto-tweet.
     """
-    latest_post = max(glob.glob("./_posts/*.md"), key=os.path.getctime)
+    latest_post = max(glob.glob("./_posts/*.md"))
+    # latest_post = max(glob.glob("./_posts/*.md"), key=os.path.getctime)
 
     lines = open(latest_post, "r").readlines()
 
