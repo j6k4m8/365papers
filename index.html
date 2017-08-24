@@ -60,6 +60,9 @@ layout: default
                                     {% endif %}
                                 </div>
                                 <div class="9u 12u(small)">
+                                    {% if this_month != next_month %}
+                                    <div class="sep"></div>
+                                    {% endif %}
                                     <div class="light-border-top">
                                         <div class="right-content">
                                             {% if this_month != next_month %}
@@ -74,9 +77,6 @@ layout: default
                                                     </a>
                                                 </h2>
                                                 <p>{{ post.summary }} <a href="{{ site.baseurl }}{{ post.url }}">[ Read More ]</a></p>
-                                                {% if this_month != next_month %}
-                                                <div class="sep"></div>
-                                                {% endif %}
                                             </div>
                                         </div>
                                     </div>
