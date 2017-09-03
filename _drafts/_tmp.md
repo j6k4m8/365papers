@@ -2,7 +2,7 @@
 layout: post
 title:
 byline:
-arxiv:
+doi:
 tags:
     -
 summary:
