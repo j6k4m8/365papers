@@ -24,6 +24,13 @@ layout: default
                             {% endif %}
                         </p>
                         <small>Read on {{ page.date | date_to_long_string }}</small>
+                        <br />
+                        <small>
+                            {% for tag in page.tags %}
+                                {% capture tag_name %}#{{ tag }}{% endcapture %}
+                                <a href="{{ site.baseurl }}/tag/{{ tag_name }}"><span><nobr>{{ tag_name }}</nobr></span>&nbsp;</a>
+                            {% endfor %}
+                        </small>
                         <div class="intro-text">
                             <div class="row">
                                 <div class="12u(small)">

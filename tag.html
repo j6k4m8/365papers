@@ -1,0 +1,90 @@
+---
+layout: default
+---
+
+{% include head.html %}
+
+<div class="row page-row">
+    <div class="8u -2u 10u(small) -1u(small)">
+        <div class="row">
+            <div class="12u">
+                <div class="row">
+                    <div class="12u">
+                        <h1 id="tag-holder" class="page-title"></span>
+                        </h1>
+                        <!-- <div class="intro-text">
+                            <div class="row">
+                                <div class="12u(small)">
+                                    <p>
+                                        <div id="tag-holder"></div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="12u">
+                            <!-- Post Listing -->
+                            {% for post in site.posts %}
+
+                            <div class="tag-container hidden" data-tags="[{% for tag in post.tags %}{{ tag }},{% endfor %}]">
+
+                                {% capture this_month %}{{ post.next.date | date: "%B" }}{% endcapture %}
+                                {% capture next_month %}{{ post.date | date: "%B" }}{% endcapture %}
+
+                                <div class="row topic-row">
+                                    <div class="3u not-small">
+                                        <div class="light-border-top">
+                                            <span class="type-brandon left-header">
+                                                № {{ post.slug }} <br /> {{ post.date | date: "%B %d" }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="9u 12u(small)">
+                                        {% if this_month != next_month %}
+                                        <!-- <div class="sep"></div> -->
+                                        {% endif %}
+                                        <div class="light-border-top">
+                                            <div class="right-content">
+                                                <div class="12u type-brandon only-small small-header year-header">
+                                                    № {{ post.slug }} — {{ post.date | date: "%B %d" }}
+                                                </div>
+                                                <div class="right-paragraph 12u">
+                                                    <h2>
+                                                        <a href="{{ site.baseurl }}{{ post.url }}">
+                                                            {{ post.title }}
+                                                        </a>
+                                                    </h2>
+                                                    <p>{{ post.summary }} <a style="white-space: nowrap;" href="{{ site.baseurl }}{{ post.url }}">[ Read More ]</a></p>
+                                                    <small>
+                                                        {% for tag in post.tags %}
+                                                            {% capture tag_name %}#{{ tag }}{% endcapture %}
+                                                            <a href="{{ site.baseurl }}/tag/{{ tag_name }}"><span><nobr>{{ tag_name }}</nobr></span>&nbsp;</a>
+                                                        {% endfor %}
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Post Listing -->
+                            {% endfor %}
+                        <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("tag-holder").innerText = window.location.hash;
+    Array.from(document.getElementsByClassName("tag-container")).forEach(i => {
+        if (i.dataset.tags.indexOf(window.location.hash.slice(1)) >= 0) {
+            i.classList.remove("hidden")
+        }
+    });
+
+    window.onhashchange = function() {
+        window.location.reload();
+    }
+</script>

@@ -77,6 +77,12 @@ layout: default
                                                     </a>
                                                 </h2>
                                                 <p>{{ post.summary }} <a style="white-space: nowrap;" href="{{ site.baseurl }}{{ post.url }}">[ Read More ]</a></p>
+                                                <small>
+                                                    {% for tag in post.tags %}
+                                                        {% capture tag_name %}#{{ tag }}{% endcapture %}
+                                                        <a href="{{ site.baseurl }}/tag/{{ tag_name }}"><span><nobr>{{ tag_name }}</nobr></span>&nbsp;</a>
+                                                    {% endfor %}
+                                                </small>
                                             </div>
                                         </div>
                                     </div>
