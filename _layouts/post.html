@@ -19,6 +19,9 @@ layout: default
                             {% if page.arxiv %}
                             <a href="https://arxiv.org/abs/{{ page.arxiv }}">{{ page.byline }} ({{ page.arxiv }})</a>
                             {% endif %}
+                            {% if page.url %}
+                            <a href="{{ page.url }}">{{ page.byline }} ({{ page.url }})</a>
+                            {% endif %}
                         </p>
                         <small>Read on {{ page.date | date_to_long_string }}</small>
                         <div class="intro-text">
