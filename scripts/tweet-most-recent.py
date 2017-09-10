@@ -30,6 +30,9 @@ def main():
     if "doi" in info:
         info["aux_url"] = "https://doi.org/" + info['doi']
 
+    if "uri" in info:
+        info["aux_url"] = info['uri']
+
     info["url"] = "http://blog.jordan.matelsky.com/365papers/{}/".format(
         latest_post.split(".")[-2].split("-")[-1]
     )
