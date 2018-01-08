@@ -1,0 +1,95 @@
+--- layout: default --- {% include head.html %}
+
+<div class="row page-row">
+    <div class="8u -2u 10u(small) -1u(small)">
+        <div class="row">
+            <div class="12u">
+                <div class="row">
+                    <div class="12u">
+                        <h1 class="page-title">365
+                            <span style="font-weight: normal;">Papers</span>
+                        </h1>
+                        <div class="intro-text">
+                            <div class="row">
+                                <div class="12u(small)">
+                                    <p>
+                                        Starting August 22, 2017, I'll read one academic paper every day for 365 days. The topics are intended to span
+                                        <b>Machine Learning</b>,
+                                        <b>Neuroscience</b>,
+                                        <b>Computer Vision</b>, and
+                                        <b>Computational Medicine</b>, with other topics thrown in liberally for seasoning.
+                                    </p>
+                                    <p>
+                                        Get in touch with me
+                                        <a href="https://twitter.com/j6m8">on Twitter</a> as I tweet
+                                        <a href="https://twitter.com/search?l=&q=%23365papers%20from%3Aj6m8&src=typd">#365papers</a>, or follow here. Suggest papers! Read along! Condescend!
+                                    </p>
+                                    <p>
+                                        <small>
+                                            This website is hosted by GitHub Pages, and the code is available
+                                            <a href="https://github.com/j6k4m8/365papers">here</a>.
+                                            <br /> I am currently organizing papers with
+                                            <a href="https://www.mendeley.com/community/j6m8s-365papers/">Mendeley</a>, and sending them automatically to my Kindle via
+                                            <a href="https://www.kinsync.com">KinSync</a>.
+                                        </small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="12u">
+                            <!-- Post Listing -->
+                            {% for post in site.posts %} {% capture this_month %}{{ post.next.date | date: "%B" }}{% endcapture %} {% capture next_month
+                            %}{{ post.date | date: "%B" }}{% endcapture %}
+
+                            <div class="row topic-row">
+                                <div class="3u not-small">
+                                    {% if this_month != next_month %}
+                                    <div class="light-border-top">
+                                        <span class="type-brandon left-header">
+                                            {{ post.date | date: "%B" }}
+                                        </span>
+                                    </div>
+                                    {% else %} &nbsp; {% endif %}
+                                </div>
+                                <div class="9u 12u(small)">
+                                    {% if this_month != next_month %}
+                                    <!-- <div class="sep"></div> -->
+                                    {% endif %}
+                                    <div class="light-border-top">
+                                        <div class="right-content">
+                                            {% if this_month != next_month %}
+                                            <div class="12u type-brandon only-small small-header year-header">
+                                                {{ post.date | date: "%B" }}
+                                            </div>
+                                            {% endif %}
+                                            <div class="right-paragraph 12u">
+                                                <h2>
+                                                    <a href="{{ site.baseurl }}{{ post.url }}">
+                                                        {{ post.date | date: "%d" }} &mdash; {{ post.title }}
+                                                    </a>
+                                                </h2>
+                                                <small>
+                                                    {% for tag in post.tags %} {% capture tag_name %}#{{ tag }}{% endcapture %}
+                                                    <a href="{{ site.baseurl }}/tag/{{ tag_name }}">
+                                                        <span>
+                                                            <nobr>{{ tag_name }}</nobr>
+                                                        </span>&nbsp;</a>
+                                                    {% endfor %}
+                                                </small>
+                                                <div>
+                                                    {{ post.text }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <!-- End Post Listing -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
