@@ -46,11 +46,15 @@ for i in range(len(tags)):
 tag_pairs = [
 	(tags[i], tags[j]) 
 	for i, j in zip(*np.where(distances <= 1))
+        if len(tags[i]) > 3
 ]
 
 tag_pairs = [
 	t for t in tag_pairs if tag_counts[t[0]] < tag_counts[t[1]]
 ]
+
+if len(tag_pairs) is 0:
+    exit()
 
 print("\n".join([
 	"{}: {} ({}) -> {} ({})".format(i, t[0], len(tag_associations[t[0]]), t[1], len(tag_associations[t[1]]))
@@ -72,9 +76,6 @@ while i != 'q':
 		)] = "    - " + tag_pairs[i][1] + "\n"
 		with open(f, 'w') as fh:
 			fh.writelines(lines)
-
-
-
 
 
 # plt.imshow(distances)
