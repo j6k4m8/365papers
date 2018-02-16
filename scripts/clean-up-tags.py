@@ -38,13 +38,13 @@ for i in range(len(tags)):
 	for j in range(len(tags)):
 		if i is not j:
 			distances[i,j] = editdistance.eval(
-				tags[i], tags[j]
+				tags[i].lower(), tags[j].lower()
 			)
 		else:
 			distances[i,j] = 99
 
 tag_pairs = [
-	(tags[i], tags[j]) 
+	(tags[i], tags[j])
 	for i, j in zip(*np.where(distances <= 1))
         if len(tags[i]) > 3
 ]
