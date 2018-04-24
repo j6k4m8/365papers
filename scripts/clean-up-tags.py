@@ -40,13 +40,15 @@ for i in range(len(tags)):
 			distances[i,j] = editdistance.eval(
 				tags[i].lower(), tags[j].lower()
 			)
+			if tags[i].lower() == tags[j].lower():
+				distances[i,j] = 1
 		else:
 			distances[i,j] = 99
 
 tag_pairs = [
 	(tags[i], tags[j])
 	for i, j in zip(*np.where(distances <= 1))
-        if len(tags[i]) > 3
+        if len(tags[i]) > 4
 ]
 
 tag_pairs = [
