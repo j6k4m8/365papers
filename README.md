@@ -5,6 +5,8 @@ You can read along with my year in papers [here](https://blog.jordan.matelsky.co
 
 ## I want to do this. How?
 
+First I'd read [the epilogue that I posted](https://blog.jordan.matelsky.com/365papers/epilogue/) talking about some of the challenges and advantages of a project like this. Then, if you like my format:
+
 - Clone this repository
 - Modify `_config.yml` to say your name instead of my name
 - Enable GitHub Pages support (https://github.com/[YOUR_USERNAME]/365papers/settings)
