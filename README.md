@@ -1,6 +1,8 @@
 # 365papers
 > A paper per day has no effect on doctor proximity (p &lt; 0.05).
 
+You can read along with my year in papers [here](https://blog.jordan.matelsky.com/365papers/).
+
 ## I want to do this. How?
 
 - Clone this repository
